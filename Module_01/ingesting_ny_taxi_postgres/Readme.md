@@ -8,7 +8,23 @@ The video "DE Zoomcamp 1.2.2 - Ingesting NY Taxi Data to Postgres" provides a de
      - `-v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data`: Maps a volume from the host (`$(pwd)/ny_taxi_postgres_data`) to the container (`/var/lib/postgresql/data`) for data persistence.
      - `-p 5432:5432`: Maps port 5432 of the container to port 5432 on the host, enabling local access to the PostgreSQL server.
      - `postgres:13`: Specifies the Docker image and tag (version) to use; in this case, PostgreSQL version 13.
+    - This command sets up a PostgreSQL database with the specified configuration and ensures that the data is stored persistently on the host machine.
 
+    > For Windows, the `$(pwd)` command may not work as expected. Instead, you can use the full path to the directory, such as `C:\path\to\ny_taxi_postgres_data`.
+
+    Complete command for Windows:
+    ```bash
+    winpty docker run -it \
+      -e POSTGRES_USER="root" \
+      -e POSTGRES_PASSWORD="root" \
+      -e POSTGRES_DB="ny_taxi" \
+      -v "D:\\DataEngineering\\Module_01\\ingesting_ny_taxi_postgres\\ny_taxi_postgres_data:/var/lib/postgresql/data" \
+      -p 5432:5432 postgres:13
+    ```
+    - The `winpty` command is used to run the Docker container in a Windows environment.
+    - The `-it` flag is used to allocate a pseudo-TTY and keep STDIN open, allowing for interactive input.
+
+  
 2. **`pgcli -h localhost -p 5432 -U root -d ny_taxi`**
    - This command launches pgcli, a command-line interface for PostgreSQL, connecting to the database with specified parameters:
      - `-h localhost`: Specifies the host.
