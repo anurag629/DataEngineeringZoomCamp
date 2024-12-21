@@ -6,18 +6,18 @@ docker run -d -t ^
 -e POSTGRES_USER=root ^
 -e POSTGRES_PASSWORD=root ^
 -e POSTGRES_DB=ny_taxi ^
--v C:\path\to\ny_taxi_postgres_data:/var/lib/postgresql/data ^
+-v "C:\path\to\ny_taxi_postgres_data:/var/lib/postgresql/data" ^
 -p 5432:5432 ^
 postgres:13
 ```
 
 **Ubuntu:**
 ```bash
-docker run -d -t \
+docker run -it \
 -e POSTGRES_USER=root \
 -e POSTGRES_PASSWORD=root \
 -e POSTGRES_DB=ny_taxi \
--v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+-v "$(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data" \
 -p 5432:5432 \
 postgres:13
 ```
@@ -55,6 +55,8 @@ pip install jupyter
 
 ### Reading CSV file with Pandas
 
+>> Dataset Link: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
 ```python
 import pandas as pd
 
@@ -65,11 +67,32 @@ df = pd.read_csv('C:\\path\\to\\file.csv') # Windows
 
 ### Generating SQL Schema
 
+Using Pandas(Dummy Schema as it might not work with postgres):
+
+```python
+schema = pd.io.sql.get_schema(df, name='taxi')
+print(schema)
+```
+
+Using SQLAlchemy Schema(Recommended as it works with PostgreSQL):
+
 ```python
 from sqlalchemy import create_engine
 
 # Adjust the connection string for both Windows and Ubuntu
 engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
+```
+
+Now, we can use the Pandas `pd.io.sql.get_schema` method to generate the schema for the DataFrame using the SQLAlchemy engine:
+
+```python
+schema = pd.io.sql.get_schema(df, 'taxi', con=engine)
+print(schema)
+```
+
+### Creating Table in PostgreSQL
+
+```python
 df.to_sql('yellow_taxi_data', engine, if_exists='replace', index=False)
 ```
 

@@ -1,1 +1,2 @@
-Module_01/ingesting_ny_taxi_postgres/ny_taxi_postgres_data
+module_01/02_ingesting_ny_taxi_postgres/ny_taxi_postgres_data
+module_01/02_ingesting_ny_taxi_postgres/yellow_tripdata_2021-01.csv
