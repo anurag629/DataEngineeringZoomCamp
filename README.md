@@ -19,3 +19,10 @@
     [Notes Link](module_01/03_connecting_pgadmin_postgres/Readme.md)
 
     [Video Link](https://www.youtube.com/watch?v=hCAIVe9N0ow&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=8)
+
+
+4. Putting the ingestion script into Docker
+
+    [Notes Link](module_01/04_ingestion_script_into_docker/Readme.md)
+
+    [Video Link](https://www.youtube.com/watch?v=B1WwATwf-vY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=9)
