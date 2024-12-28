@@ -1,2 +1,6 @@
-module_01/02_ingesting_ny_taxi_postgres/ny_taxi_postgres_data
-module_01/02_ingesting_ny_taxi_postgres/yellow_tripdata_2021-01.csv
+01_module/02_ingesting_ny_taxi_postgres/ny_taxi_postgres_data
+01_module/02_ingesting_ny_taxi_postgres/yellow_tripdata_2021-01.csv
+
+# Add all folders named with `ny_taxi_postgres_data` to the .gitignore file
+ny_taxi_postgres_data/
+ny_taxi_data/

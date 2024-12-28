@@ -64,12 +64,13 @@ This environment variable allows Terraform to authenticate using the service acc
      required_providers {
        google = {
          source = "hashicorp/google"
-         version = "~> 4.0"
+         version = "6.14.1"
        }
      }
    }
 
    provider "google" {
+    credentials = "./keys/your-key.json"
      project = "your-gcp-project-id"
      region  = "us-central1"
    }
@@ -98,6 +99,15 @@ resource "google_storage_bucket" "demo_bucket" {
     }
     condition {
       age = 3
+    }
+  }
+
+  lifecycle_rule {
+    condition {
+      age = 1
+    }
+    action {
+      type = "AbortIncompleteMultipartUpload"
     }
   }
 }
