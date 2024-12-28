@@ -23,6 +23,26 @@
 
 4. Putting the ingestion script into Docker
 
-    [Notes Link](module_01/04_ingestion_script_into_docker/Readme.md)
+    [Notes Link](module_01/04_putting_the_ingestion_script_into_docker/Readme.md)
 
     [Video Link](https://www.youtube.com/watch?v=B1WwATwf-vY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=9)
+
+5. Running Postgres and pgAdmin with Docker-Compose
+
+    [Notes Link](module_01/05_running_postgres_pgadmin_docker_compose/Readme.md)
+
+    [Video Link](https://www.youtube.com/watch?v=hKI6PkPhpa0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=10)
+
+6. SQL Refresher
+
+    [Notes Link](module_01/06_sql_refresher/Readme.md)
+
+    [Video Link](https://youtu.be/QEcps_iskgg?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+
+7. Terraform || Terraform Basics: Simple one file Terraform Deployment
+
+    [Notes Link](module_01/07_terraform/Readme.md)
+
+    [Video Link 1](https://www.youtube.com/watch?v=s2bOYDCKl_M&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=12)
+
+    [Video Link 2](https://www.youtube.com/watch?v=Y2ux7gq3Z0o&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=12)
