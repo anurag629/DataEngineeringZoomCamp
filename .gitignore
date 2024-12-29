@@ -4,3 +4,6 @@
 # Add all folders named with `ny_taxi_postgres_data` to the .gitignore file
 ny_taxi_postgres_data/
 ny_taxi_data/
+
+# ssh keys
+.ssh/
